@@ -11,6 +11,12 @@ def about():
 	return render_template('about.html')
 def store():
 	return render_template('store.html')
+def cart():
+	return render_template('cart.html')
+def login():
+	return render_template('log in.html')
+
+
 
 
 #####################
