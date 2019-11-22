@@ -14,7 +14,7 @@ def store():
 def cart():
 	return render_template('cart.html')
 def login():
-	return render_template('log in.html')
+	return render_template('login.html')
 
 
 

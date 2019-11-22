@@ -38,19 +38,29 @@
 }
 p{ 
     text-align: center; 
-    background-color: #FFE4E1; 
-    font-size:40px;
+    font-size:20px;
+}
+h1{
+   text-align: center;
+}
+h5{
+  text-align: center;
+}
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
   margin: auto;
-  text-align: center;
+  /*text-align: center;*/
   font-family: arial;
 }
 
-.price {
-  color: grey;
+.card-text{
+  color: black;
   font-size: 22px;
 }
 
@@ -62,7 +72,7 @@ p{
   background-color: #000;
   text-align: center;
   cursor: pointer;
-  width: 100%;
+ 
   font-size: 18px;
 }
 
@@ -72,7 +82,7 @@ p{
 button, [type=button], [type=reset], [type=submit] {
     -webkit-appearance: button;
 }
-.prodcard button {
+.card button {
     border: none;
     outline: 0;
     padding: 12px;
@@ -80,6 +90,5 @@ button, [type=button], [type=reset], [type=submit] {
     background-color: #000;
     text-align: center;
     cursor: pointer;
-    width: 100%;
     font-size: 18px;
   }
