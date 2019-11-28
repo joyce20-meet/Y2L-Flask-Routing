@@ -20,7 +20,7 @@ def add_product(ID,name,price,Picturelink,Description):
 	session.add(product_objection)
 	session.commit()
 
-add_product(1,"Family Charm",60,"none","Silver Charm ")
+#add_product(5,"Family Charm",60,"/static/charm1.jpeg","Silver Charm ")
 def update_price(ID,price):
  
 	product_object = session.query(
@@ -28,12 +28,13 @@ def update_price(ID,price):
 			ID=ID).first()
 	product_object.price = price
 	session.commit()
-update_price(1,50)
+#update_price(5,50)
 def delete_product(their_name):
 
 	session.query(Product).filter_by(
 		ID=their_name).delete()
 	session.commit()
+#delete_product(5)
 def query_all():
 
 	products = session.query(
@@ -44,10 +45,13 @@ print(query_all())
 def query_by_id(their_ID):
 
  	product= session.query(
-      Product).filter_by(
-       ID=their_ID).first()
+	Product).filter_by(
+		ID=their_ID).first()
   
-
-
+def add_to_cart(productID):
+cart_object = Cart(
+	productID=productID)
+	session.add(cart_object)
+	session.commit()
 
 

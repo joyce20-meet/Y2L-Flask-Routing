@@ -15,7 +15,13 @@
 <body>
 
 <br>
-
+{% for item in data %}
+<tr>
+    <td>{{product[1]}}</td>
+    <td>{{product[2]}}</td>
+    
+</tr>
+{% endfor %}
 <div class="card" style="width: 18rem;">
   <h1>Family Charm</h1>
     <img src="/static/charm1.jpeg" class="card-img-top" >
