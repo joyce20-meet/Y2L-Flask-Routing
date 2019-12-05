@@ -64,7 +64,7 @@ img{
   font-size: 22px;
 }
 
-.card button {
+.card form {
   border: none;
   outline: 0;
   padding: 12px;
@@ -76,19 +76,5 @@ img{
   font-size: 18px;
 }
 
-.card button:hover {
-  opacity: 0.7;
-}
-button, [type=button], [type=reset], [type=submit] {
-    -webkit-appearance: button;
-}
-.card button {
-    border: none;
-    outline: 0;
-    padding: 12px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    font-size: 18px;
-  }
+
+

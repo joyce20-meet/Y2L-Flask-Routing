@@ -13,6 +13,6 @@ class Product(Base):
 	Picturelink = Column(String)
 	Description = Column(String) 
 class Cart(Base):
-	__tablename__="cart"
-	productID = Column(Integer, primary_key=True)
-	
+	__tablename__="carts"
+	ID = Column(Integer, primary_key=True)
+	productID = Column(Integer)
