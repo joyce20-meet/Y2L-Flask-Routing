@@ -15,23 +15,19 @@
 <body>
 
 <br>
-{% for item in data %}
-<tr>
-    <td>{{product[1]}}</td>
-    <td>{{product[2]}}</td>
-    
-</tr>
-{% endfor %}
+{% for product in products%}
+
 <div class="card" style="width: 18rem;">
-  <h1>Family Charm</h1>
-    <img src="/static/charm1.jpeg" class="card-img-top" >
+  <h1>{{product.name}}</h1>
+    <img src="{{product.Picturelink}}" class="card-img-top" >
  <div class="card-body">
- <h5 class="card-title"> Gold Family Charm</h5>
- <p class="card-text">$59.99</p>
+ <h5 class="card-title"> {{product.Description}}</h5>
+ <p class="card-text">{{product.price}}</p>
  <form method="get" action="/cart">
     <button type="Add to cart">Add to cart</button>
 </form>
   </div>
 </div>
+{%endfor%}
 </body>
 </html>

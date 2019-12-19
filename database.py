@@ -2,17 +2,16 @@ from model import *
 
 
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker,scoped_session
 
 
 engine = create_engine('sqlite:///database.db')
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
-session = DBSession()
+session = scoped_session(sessionmaker(bind=engine,autoflush=False))
 
-def add_product(ID,name,price,Picturelink,Description):
+def add_product(name,price,Picturelink,Description):
 	product_objection = Product(
-		ID=ID,
 		name=name,
 		price=price,
 		Picturelink=Picturelink,
@@ -20,7 +19,8 @@ def add_product(ID,name,price,Picturelink,Description):
 	session.add(product_objection)
 	session.commit()
 
-#add_product(12,"Family Charm",60,"/static/charm1.jpeg","Silver Charm ")
+add_product("Family Charm",60,"/static/charm1.jpeg","Silver Charm ")
+
 def update_price(ID,price):
  
 	product_object = session.query(
@@ -36,16 +36,15 @@ def delete_product(their_name):
 	session.commit()
 #delete_product(11)
 def query_all():
-
 	products = session.query(
-		Product).all()
+		Product).all()	
 	return products
-query_all()
-print(query_all())
+#query_all()
+#print(query_all())
 def query_by_id(their_ID):
 
  	product= session.query(
-	Product).filter_by(
+		Product).filter_by(
 		ID=their_ID).first()
 
 
@@ -54,5 +53,3 @@ def add_to_cart(productID):
 		productID=productID)
 	session.add(product_object)
 	session.commit()
-
-add_to_cart(3)
